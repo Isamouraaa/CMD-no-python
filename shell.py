@@ -53,15 +53,17 @@ while True:
         if len(historico) == 0:
             print('>> Ainda não há comandos no histórico.')
         else:
-            print(f'>> Os comandos inseridos estão na seguinte lista:\n{historico}')
+            print('>> Os comandos inseridos estão na seguinte lista:')
+            for i in range(len(historico)):
+                print(f'[{i}] {historico[i]')
     
-
     # Caso não seja nenhum dos casos especiais acima, executar o comando
     else:
         os.system(comando)
     
     # Armazena o comando no histórico
     historico.append(comando)
+
 
 
 
