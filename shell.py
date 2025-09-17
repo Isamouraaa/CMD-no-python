@@ -11,7 +11,9 @@ def isint(x):
 # Inicialização de lista para armazenar os comandos utilizados
 historico = []
 
-print('\nPara lista de comandos, insira o comando "help".\n')
+# Mensagens iniciais para o usuário
+print('\nPara lista de comandos, insira o comando "help".')
+print('Para visualizar o histórico, insira "historico".\n')
 
 while True:
     comando = input('>> Digite o comando:\n>> ')
@@ -41,6 +43,10 @@ while True:
                 print('>> Não há comandos suficiente.')
                 continue
             comando = historico[int(comando[1:])]
+    
+    # Visualização do histórico
+    elif comando == 'historico':
+        print(f'Os comandos inseridos estão na seguinte lista:\n{historico}')
     
     # Mecanismo de parada do laço infinito
     elif comando.lower() == 'exit':
