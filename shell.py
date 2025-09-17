@@ -46,7 +46,10 @@ while True:
     
     # Visualização do histórico
     elif comando == 'historico':
-        print(f'Os comandos inseridos estão na seguinte lista:\n{historico}')
+        if len(historico) == 0:
+            print('Ainda não há comandos no histórico.')
+        else:
+            print(f'Os comandos inseridos estão na seguinte lista:\n{historico}')
     
     # Mecanismo de parada do laço infinito
     elif comando.lower() == 'exit':
@@ -55,5 +58,6 @@ while True:
     # Caso não seja nenhum dos casos especiais acima, executar o comando
     else:
         os.system(comando)
-
+    # Armazena o comando no histórico
     historico.append(comando)
+
