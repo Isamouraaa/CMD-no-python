@@ -17,11 +17,11 @@ print('Para visualizar o histórico, insira "historico".\n')
 
 def main():
     while True:
-        print('\n>> Caso queira sair, digite "exit".\n')
+        print('\n>> Caso queira sair, digite "sair".\n')
         comando = input('>> Digite o comando:\n>> ')
     
         # Mecanismo de parada do laço infinito
-        if comando.lower() == 'exit':
+        if comando.lower() == 'sair':
             exit()
     
         # Mudança de diretório
@@ -65,6 +65,7 @@ def main():
         # Armazena o comando no histórico
         historico.append(comando)
 main()
+
 
 
 
