@@ -16,8 +16,8 @@ print('\nPara lista de comandos, insira o comando "help".')
 print('Para visualizar o histórico, insira "historico".\n')
 
 while True:
-    comando = input('>> Digite o comando:\n>> ')
     print('\n>> Caso queira sair, digite "exit".\n')
+    comando = input('>> Digite o comando:\n>> ')
 
     # Mecanismo de parada do laço infinito
     if comando.lower() == 'exit':
@@ -62,5 +62,6 @@ while True:
     
     # Armazena o comando no histórico
     historico.append(comando)
+
 
 
