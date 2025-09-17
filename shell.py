@@ -19,8 +19,12 @@ while True:
     comando = input('>> Digite o comando:\n>> ')
     print('\n>> Caso queira sair, digite "exit".\n')
 
+    # Mecanismo de parada do laço infinito
+    if comando.lower() == 'exit':
+        exit()
+
     # Mudança de diretório
-    if comando.startswith('cd '):
+    elif comando.startswith('cd '):
         try:
             if comando == 'cd ..':
                 os.chdir('..')
@@ -47,17 +51,16 @@ while True:
     # Visualização do histórico
     elif comando == 'historico':
         if len(historico) == 0:
-            print('Ainda não há comandos no histórico.')
+            print('>> Ainda não há comandos no histórico.')
         else:
-            print(f'Os comandos inseridos estão na seguinte lista:\n{historico}')
+            print(f'>> Os comandos inseridos estão na seguinte lista:\n{historico}')
     
-    # Mecanismo de parada do laço infinito
-    elif comando.lower() == 'exit':
-        exit()
 
     # Caso não seja nenhum dos casos especiais acima, executar o comando
     else:
         os.system(comando)
+    
     # Armazena o comando no histórico
     historico.append(comando)
+
 
